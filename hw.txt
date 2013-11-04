@@ -1,0 +1,35 @@
+Program Assignment 2
+Page 300 of textbook, Assignment 2: Implementing a Reliable Transport Protocol.
+
+Web page: http://media.pearsoncmg.com/aw/aw_kurose_network_3/labs/lab5/lab5.html
+
+Due Nov. 30, Saturday, 11:59 PM.
+
+[How to submit]
+CIS 432 students: email  <javid@cs.uoregon.edu>, with the subject "CIS 432: Program 2 Submission".
+CIS 532 students: email <javid@cs.uoregon.edu>, with the subject "CIS 532: Program 2 Submission".
+
+[What to submit]  You need to submit your source code and a README file describing
+               how to compile and run it on ix.cs.uoregon.edu.  Then your program
+               will be tested on ix.  Make sure you README is easy to follow but
+               not too verbose/tedious.
+               
+===========
+
+Implementing a Reliable Transport Protocol
+In this laboratory programming assignment, you will be writing the sending and
+receiving transport-level code for implementing a simple reliable data transfer protocol.
+There are two versions of this lab, the alternating-bit-protocol version and the
+GBN version. This lab should be fun—your implementation will differ very little
+from what would be required in a real-world situation.
+Since you probably don’t have standalone machines (with an OS that you can
+modify), your code will have to execute in a simulated hardware/software environment.
+However, the programming interface provided to your routines—the
+code that would call your entities from above and from below—is very close to
+what is done in an actual UNIX environment. (Indeed, the software interfaces
+described in this programming assignment are much more realistic than the infinite
+loop senders and receivers that many texts describe.) Stopping and starting
+timers are also simulated, and timer interrupts will cause your timer handling routine
+to be activated.
+The full lab assignment, as well as code you will need to compile with your
+own code, are available at this book’s Web site: http://www.awl.com/kurose-ross.
