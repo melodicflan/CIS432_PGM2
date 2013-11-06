@@ -194,7 +194,17 @@ Hints
     You can assume that the three way handshake has already taken place. You can hard-code an initial sequence number into your sender and receiver. 
     
     A hack would be to use negative numbers for NAKs. I probably should have included an explicit ACK/NAK bit in the packet definition.
-    
+  
+====
+checksum
+====
+1's complement to the sum of all the 8 bit (add all the bits. then invert them.)
+any overflow wrapped around (discarded)
+(checksum + bitadded) if = 11111 then there are no errors. if anything is 0 then we know we have an error
+
+seqnum + ack + convert each character in payload as int == checksum
+
+
 ====
 TODO
 ====
@@ -211,33 +221,45 @@ TODO
         -credits to author
         -acks and nacks implementation
     -makefile
+        -gcc for ix
+        -g++ for windows
     -go back n
     -alt bit v
     -check on ix
-    
 ====
 Schedule
 ====
 Due myself: 21st
 Real due date: 11/30
 
-11-3 tutorials for c, checksum method, look at tcp, look at rdt fsms
-11-4 start readme, makefile
-11-5 start alt bit (understand prog2.c)
-11-7 finish draft alt bit
+11-5 start alt bit (35%) (understand prog2.c)
+11-6 look at tcp, 44-110, look at rdt fsms
+11-7 alt bit (55%)
 11-9 finish alt bit, look at go-back-n
 
 11-
-11-16 finish go back n
+11-16 finish go back n, finish readme, rename files
 11-17 check on ix and turn in
 
 ====
+Init values:
+
+#msg: 10
+loss: 0
+corrupt: 0
+timebtwn: 1000
+trace:2
+====
 Questions
 ----
-    -extra credit section?
-    -so no b-timer? (start, stop, interrupt?)
+    -extra credit section? do b? (including timer and send msg back?)
     -no 3 way handshake. no closing? just simulate the transfer?
-    -sample timeout?
-    -all the warnings in prog2.c? 
+    -all the warnings in prog2.c?
+    
+    -how to set timeout? use TCP method? initial value?
+    -alt bit is just 0s and 1s? for seq number? like rdt fsm in book?
+    -account for selective repeat dilemma? 50 messages buffer
+    -use b_output to send back ack/nack, checksum?
+    -even if it's a nak for the right pckt we just wait until timeout for retransmissions?
     
     
