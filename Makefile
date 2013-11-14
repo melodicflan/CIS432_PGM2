@@ -10,11 +10,11 @@ OPT=-o
 RM=rm -f
 
 # files
-FILE=prog2.c
-OUTFILE=prog2
+FILE=rtp_altbit.c
+OUTFILE=rtp_altbit
 
-FILE2=prog2gbn.c
-OUTFILE2=prog2gbn
+FILE2=rtp_gobackn.c
+OUTFILE2=rtp_gobackn
 
 # make commands
 all: ab gbn
@@ -27,6 +27,7 @@ gbn:
 
 clean:
 	$(RM) *.o
-	$(RM) prog2.exe
-	$(RM) prog2gbn.exe
+	$(RM) rtp_altbit.exe
+	$(RM) rtp_gobackn.exe
+	$(RM) a.exe
 	$(RM) a.out

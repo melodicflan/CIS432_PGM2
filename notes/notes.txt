@@ -232,14 +232,9 @@ Schedule
 Due myself: 21st
 Real due date: 11/30
 
-11-5 start alt bit (35%) (understand prog2.c)
-11-6 look at tcp, 44-110, look at rdt fsms
-11-7 alt bit (55%)
-11-9 finish alt bit, look at go-back-n
-
-11-
-11-16 finish go back n, finish readme, rename files
-11-17 check on ix and turn in
+11-11 debug both (just in case), finish readme, makefile, check on ix 
+11-12 check with gtf on various questions, 
+11-13 make changes, turn in
 
 ====
 Init values:
@@ -252,14 +247,18 @@ trace:2
 ====
 Questions
 ----
-    -extra credit section? do b? (including timer and send msg back?)
-    -no 3 way handshake. no closing? just simulate the transfer?
-    -all the warnings in prog2.c?
+    -extra credit section? do b? (including timer and send msg back?) no b
+    -no 3 way handshake. no closing? just simulate the transfer? assume yes.
+    -all the warnings in prog2.c? ignore. works on ix
+	-all b methods? k
+	
+	-acks and seqnums? okay!
     
-    -how to set timeout? use TCP method? initial value?
-    -alt bit is just 0s and 1s? for seq number? like rdt fsm in book?
-    -account for selective repeat dilemma? 50 messages buffer
-    -use b_output to send back ack/nack, checksum?
+    -how to set timeout? use TCP method? initial value? if timeoutinterval, does timerinterrupt reset it? whichever
+    -alt bit is just 0s and 1s? for seq number? like rdt fsm in book? yea
     -even if it's a nak for the right pckt we just wait until timeout for retransmissions?
+	-when making chksum, what is ack value? 0
     
+	-worry about synchro? what if rdt_rcv gets called on before expectedseqnum++?
+	-event based protocol... so go back n... outputs only when it gets a call from layer5... but what if there's things in the window left to send? app layer will take care of it
     
