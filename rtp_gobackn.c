@@ -96,10 +96,11 @@ struct msg message;
         if (base == nextseqnum) {
             //save current time (used for calculating timeoutInterval later)
             currTime = simtime;
-
+            recordtimeOn = 1;
+            
             //start timer
             starttimer(0, timeoutInterval);
-            recordtimeOn = 1;
+
         }
 
         //update nextseqnum (max buffer size is 50, so 49 is the last index)
@@ -276,7 +277,7 @@ A_timerinterrupt() {
         printf("    -- 'A' resending packets[%d...%d] to layer3\n", base, nextseqnum - 1);
     }
     int indexer = base;
-    do {
+    while (1) {
         if (TRACE == 2) {
             printf("    -- 'A' resending packet%d to layer3\n", indexer);
         }
@@ -286,7 +287,7 @@ A_timerinterrupt() {
             break;
         }
         indexer = add_one(indexer);
-    } while (indexer != nextseqnum);
+    }
 }
 
 /* the following routine will be called once (only) before any other */
