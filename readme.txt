@@ -26,9 +26,8 @@ NOTES
 					- '*-' is a variable update (example: (New timeoutInterval: 13.929892))
 					
 	TimeOutInterval	- instead of selecting an arbitrary number, I used TCP's TimeOutInterval algorithm 
-					- However, SampleRTT is re-calculated upon re-transmissions (instead of from first send until ACK)
 					
-	GoBackN			- receiver sends back an ACK, in which ACK# == seqnum
+	GoBackN			- receiver sends back an ACK, in which ACK# == seqnum of the pkt
 	
 BUILD/RUN
 	'make'			- compiles rtp_altbit.c and rtp_gobackn.c

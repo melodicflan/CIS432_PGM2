@@ -27,6 +27,8 @@ gbn:
 
 clean:
 	$(RM) *.o
+	$(RM) rtp_altbit
+	$(RM) rtp_gobackn
 	$(RM) rtp_altbit.exe
 	$(RM) rtp_gobackn.exe
 	$(RM) a.exe
